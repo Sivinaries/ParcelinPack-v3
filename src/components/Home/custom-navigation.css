@@ -1,0 +1,73 @@
+/* custom-navigation.css */
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.review-custom-swiper-button-next,
+.review-custom-swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.custom-swiper-button-next:hover,
+.custom-swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.review-custom-swiper-button-next:hover,
+.review-custom-swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.custom-swiper-button-next {
+  right: 20px;
+}
+
+.custom-swiper-button-prev {
+  left: 20px;
+}
+
+.review-custom-swiper-button-next {
+  right: 20px;
+}
+
+.review-custom-swiper-button-prev {
+  left: 20px;
+}
+
+/* Menambahkan ikon panah */
+.custom-swiper-button-next::after,
+.custom-swiper-button-prev::after {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Sembunyikan tombol navigasi default */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}

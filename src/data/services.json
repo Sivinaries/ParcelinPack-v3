@@ -1,0 +1,34 @@
+[
+  {
+    "text": "Kemasan Produk",
+    "tags": ["Custom Box", "Plastic Packaging", "lorem"],
+    "img": "lay1.png",
+    "link": "/product"
+  },
+  {
+    "text": "Hampers & Corporate gift",
+    "tags": ["Custom Box", "Plastic Packaging", "lorem"],
+    "img": "lay2.png",
+    "link": "/hamper"
+  },
+  {
+    "text": "Merchandise",
+    "tags": ["Custom Box", "Plastic Packaging", "lorem"],
+    "img": "lay3.png",
+    "link": "/merchandise"
+  },
+  {
+    "text": "PR Packaging",
+    "tags": [
+      "Totebag",
+      "Pouch",
+      "Card Holder",
+      "Flashdisk",
+      "Pen",
+      "Tumbler",
+      "Umbrella"
+    ],
+    "img": "lay4.png",
+    "link": "/pr-packaging"
+  }
+]
