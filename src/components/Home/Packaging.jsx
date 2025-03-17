@@ -36,7 +36,7 @@ function Packaging() {
                                             "Hijab", "Elektronik", "Aksesoris", "Perhiasan", "Event"
                                         ].map((item, index) => (
                                             <div key={index} className="h-full w-fit flex justify-center min-h-[24px] lg:min-[50px]: md:min-h-80px]">
-                                                <h1 className="text-[13px] lg:text-[30px] md:text-[60px] font-extralight text-black flex items-center">
+                                                <h1 className="text-[13px] lg:text-[46px] md:text-[60px] font-extralight text-black flex items-center">
                                                     {item}
                                                     <img src={star} alt="Running Star" className="mx-3 md:mx-6 h-4 md:h-10" />
                                                 </h1>

@@ -4,7 +4,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './custom-navigation.css';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { Link } from 'react-router-dom';
 
 function Hero() {
   const slides = [
@@ -74,7 +73,7 @@ function Hero() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Link to="/service" className="block w-full h-full">
+            <a href="/service" className="block w-full h-full">
               <img
                 src={`/images/hero/${slide.image}`}
                 alt={`Slide ${index + 1}`}
@@ -91,7 +90,7 @@ function Hero() {
                   ))}
                 </ul>
               </div>
-            </Link>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>

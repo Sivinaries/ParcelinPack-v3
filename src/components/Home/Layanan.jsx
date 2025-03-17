@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import lay1 from "../../assets/images/layanan/lay1.png";
 import lay2 from "../../assets/images/layanan/lay2.png";
 import lay3 from "../../assets/images/layanan/lay3.png";
@@ -10,22 +9,22 @@ function Layanan() {
     {
       text: "Kemasan Produk",
       img: lay2,
-      link: "/product",
+      link: "/service/6",
     },
     {
       text: "Hampers & Corporate gift",
       img: lay3,
-      link: "/hampers",
+      link: "/service/7",
     },
     {
       text: "Merchandise",
       img: lay4,
-      link: "/merchandise",
+      link: "/service/7",
     },
     {
       text: "PR Packaging",
       img: lay1,
-      link: "/pr-packaging",
+      link: "/service/8",
     },
   ];
 
@@ -37,7 +36,7 @@ function Layanan() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5 md:gap-2">
           {services.map((service, index) => (
-            <Link to={service.link} key={index} className="relative group">
+            <a href={service.link} key={index} className="relative group">
               <div className="relative">
                 <img
                   className="w-full h-60 md:h-full object-cover inset-0 rounded-3xl"
@@ -59,7 +58,7 @@ function Layanan() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

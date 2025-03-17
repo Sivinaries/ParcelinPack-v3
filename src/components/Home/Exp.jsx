@@ -15,7 +15,6 @@ function Exp() {
     
     animationTriggered.current = true;
     
-    const yearsDuration = 1500;
     const yearsIncrement = 7 / (yearsDuration / 16);
     let yearsCurrentCount = 0;
     

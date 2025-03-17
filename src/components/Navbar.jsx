@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/images/logo.png";
-import { Link } from "react-router-dom";
 import { BsX } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 
@@ -11,12 +10,12 @@ export default function Navbar() {
 
     const navLinks = useMemo(
         () => [
-            { title: "Beranda", to: "/" },
-            { title: "Tentang Kami", to: "/about" },
-            { title: "Layanan Kami", to: "/service" },
-            { title: "Kemasan Produk", to: "/service/6" },
-            { title: "Blog", to: "/blog" },
-            { title: "Portofolio", to: "/portfolio" },
+            { title: "Beranda", href: "/" },
+            { title: "Tentang Kami", href: "/about" },
+            { title: "Layanan Kami", href: "/service" },
+            { title: "Kemasan Produk", href: "/service/6" },
+            { title: "Blog", href: "/blog" },
+            { title: "Portofolio", href: "/portfolio" },
         ],
         []
     );
@@ -37,7 +36,7 @@ export default function Navbar() {
     return (
         <motion.nav className="shadow-xl z-50 fixed top-0 right-0 left-0 p-2 bg-white">
             <div className="flex justify-between items-center">
-                <Link className="flex items-center" to="/">
+                <a className="flex items-center" href="/">
                     <img className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" src={logo} alt="Logo Parcelin" />
                     {!isMobileView && (
                         <div className="ml-2 sm:ml-3">
@@ -46,14 +45,14 @@ export default function Navbar() {
                             </p>
                         </div>
                     )}
-                </Link>
+                </a>
 
                 <div className="flex gap-x-2">
                     {isMobileView ? (
                         <>
-                            <Link to="/contact" className="p-2 rounded-full bg-orange-500 text-white text-center font-bold">
+                            <a href="/contact" className="p-2 rounded-full bg-orange-500 text-white text-center font-bold">
                                 Hubungi Kami
-                            </Link>
+                            </a>
                             <button className="text-black" onClick={toggleModal}>
                                 {showModal ? <BsX size={42} /> : <FaBars className="w-8 h-8" />}
                             </button>
@@ -61,9 +60,9 @@ export default function Navbar() {
                     ) : (
                         <div className="hidden lg:flex gap-4 xl:gap-8 items-center">
                             {navLinks.map((link, index) => (
-                                <Link key={index} to={link.to} className="text-black text-sm lg:text-base xl:text-lg font-semibold hover:scale-110 duration-200 delay-150">
+                                <a key={index} href={link.href} className="text-black text-sm lg:text-base xl:text-lg font-semibold hover:scale-110 duration-200 delay-150">
                                     {link.title}
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     )}
@@ -72,9 +71,9 @@ export default function Navbar() {
                 {!isMobileView && (
                     <div className="hidden lg:flex">
                         <div className="p-2 rounded-full bg-orange-500">
-                            <Link className="text-white text-center font-bold" to="/contact">
+                            <a className="text-white text-center font-bold" href="/contact">
                                 Hubungi Kami
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 )}
@@ -87,9 +86,9 @@ export default function Navbar() {
                             <div className="flex flex-col gap-6 sm:gap-8 h-full text-left">
                                 {navLinks.map((link, index) => (
                                     <span key={index} className="text-black text-2xl" onClick={closeModal}>
-                                        <Link to={link.to} className="hover:underline">
+                                        <a href={link.href} className="hover:underline">
                                             {link.title}
-                                        </Link>
+                                        </a>
                                     </span>
                                 ))}
                             </div>

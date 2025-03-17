@@ -1,6 +1,5 @@
 import model from "../../assets/images/portofolio/model.png";
 import hampers from "../../assets/images/portofolio/hampers.jpg";
-import { Link } from "react-router-dom";
 import { LuArrowUpRight } from 'react-icons/lu'
 
 function Portfolio() {
@@ -14,14 +13,14 @@ function Portfolio() {
                 Kami Membuat Packaging yang Menceritakan Kisah yang Layak Dibagikan
               </h1>
               <div className="rounded-full bg-orange-500 p-2 w-fit">
-                <Link
-                  to="portfolio"
+                <a
+                  href="/portfolio"
                   className="flex justify-between">
                   <h1 className="text-white hover:underline transition-all duration-100 delay-100 text-center md:text-xl px-2 md:px-4 font-bold">
                     Lihat Portofolio
                   </h1>
                   <LuArrowUpRight className="text-white my-auto" size={24} />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
