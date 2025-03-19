@@ -14,46 +14,37 @@ function Exp() {
     if (animationTriggered.current) return;
     
     animationTriggered.current = true;
-    
+
+    // Durasi animasi
+    const yearsDuration = 1500;
+    const customersDuration = 2000;
+    const productionDuration = 2500;
+
+    // Animasi tahun
     const yearsIncrement = 7 / (yearsDuration / 16);
     let yearsCurrentCount = 0;
-    
     const yearsTimer = setInterval(() => {
-      yearsCurrentCount += yearsIncrement;
-      if (yearsCurrentCount >= 7) {
-        setYearsCount(7);
-        clearInterval(yearsTimer);
-      } else {
-        setYearsCount(Math.ceil(yearsCurrentCount));
-      }
+      yearsCurrentCount = Math.min(yearsCurrentCount + yearsIncrement, 7);
+      setYearsCount(Math.ceil(yearsCurrentCount));
+      if (yearsCurrentCount >= 7) clearInterval(yearsTimer);
     }, 16);
-    
-    const customersDuration = 2000;
+
+    // Animasi pelanggan
     const customersIncrement = 7500 / (customersDuration / 16);
     let customersCurrentCount = 0;
-    
     const customersTimer = setInterval(() => {
-      customersCurrentCount += customersIncrement;
-      if (customersCurrentCount >= 7500) {
-        setCustomersCount(7500);
-        clearInterval(customersTimer);
-      } else {
-        setCustomersCount(Math.floor(customersCurrentCount));
-      }
+      customersCurrentCount = Math.min(customersCurrentCount + customersIncrement, 7500);
+      setCustomersCount(Math.floor(customersCurrentCount));
+      if (customersCurrentCount >= 7500) clearInterval(customersTimer);
     }, 16);
-    
-    const productionDuration = 2500;
+
+    // Animasi produksi
     const productionIncrement = 10 / (productionDuration / 16);
     let productionCurrentCount = 0;
-    
     const productionTimer = setInterval(() => {
-      productionCurrentCount += productionIncrement;
-      if (productionCurrentCount >= 10) {
-        setProductionCount(10);
-        clearInterval(productionTimer);
-      } else {
-        setProductionCount(parseFloat(productionCurrentCount.toFixed(1)));
-      }
+      productionCurrentCount = Math.min(productionCurrentCount + productionIncrement, 10);
+      setProductionCount(parseFloat(productionCurrentCount.toFixed(1)));
+      if (productionCurrentCount >= 10) clearInterval(productionTimer);
     }, 16);
   };
 
@@ -67,25 +58,19 @@ function Exp() {
       { threshold: 0.2 }
     );
 
-    const currentSectionRef = sectionRef.current;
-    if (currentSectionRef) {
-      observer.observe(currentSectionRef);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
     return () => {
-      if (currentSectionRef) {
-        observer.unobserve(currentSectionRef);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
-  const formatCustomers = (num) => {
-    return num.toLocaleString();
-  };
-
-  const formatProduction = (num) => {
-    return num === 10 ? "10 Juta" : `${num} Juta`;
-  };
+  const formatCustomers = (num) => num.toLocaleString();
+  const formatProduction = (num) => (num === 10 ? "10 Juta" : `${num} Juta`);
 
   return (
     <div className="grid grid-cols-1 h-full bg-white" ref={sectionRef}>
@@ -103,10 +88,7 @@ function Exp() {
                   <p className="text-2xl">Tahun</p>
                 </div>
                 <p className="z-10 text-xs md:text-sm">
-                  Dengan pengalaman lebih dari 7 tahun, Parcelinpack hadir
-                  sebagai mitra terpercaya dalam menyediakan kemasan yang
-                  kreatif dan inovatif untuk meningkatkan nilai estetika produk
-                  dan memperkuat citra brand bisnis Anda.
+                  Dengan pengalaman lebih dari 7 tahun, Parcelinpack hadir sebagai mitra terpercaya dalam menyediakan kemasan yang kreatif dan inovatif untuk meningkatkan nilai estetika produk dan memperkuat citra brand bisnis Anda.
                 </p>
               </div>
             </div>
@@ -121,10 +103,7 @@ function Exp() {
                   <p className="text-2xl">Total Pelanggan</p>
                 </div>
                 <p className="z-10 text-sm md:text-sm">
-                  Dipercaya oleh lebih dari 7500 pelanggan setia. Parcelinpack
-                  menjadi pilihan utama untuk solusi packaging bagi UMKM hingga
-                  Brand-Brand besar Nasional. Kami senantiasa siap mendukung
-                  kesuksesan bisnis Anda.
+                  Dipercaya oleh lebih dari 7500 pelanggan setia. Parcelinpack menjadi pilihan utama untuk solusi packaging bagi UMKM hingga Brand-Brand besar Nasional. Kami senantiasa siap mendukung kesuksesan bisnis Anda.
                 </p>
               </div>
             </div>
@@ -140,10 +119,7 @@ function Exp() {
                 <p className="text-2xl">Total Produksi</p>
               </div>
               <p className="z-10 text-xs md:text-sm">
-                Dengan total produksi lebih dari 10.000.000 packaging,
-                Parcelinpack membuktikan dedikasi dalam menghadirkan kualitas
-                dan inovasi yang mendukung kesuksesan bisnis Anda di berbagai
-                sektor industri.
+                Dengan total produksi lebih dari 10.000.000 packaging, Parcelinpack membuktikan dedikasi dalam menghadirkan kualitas dan inovasi yang mendukung kesuksesan bisnis Anda di berbagai sektor industri.
               </p>
             </div>
           </div>

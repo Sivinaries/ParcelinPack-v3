@@ -71,7 +71,7 @@ export default function Navbar() {
                 {!isMobileView && (
                     <div className="hidden lg:flex">
                         <div className="p-2 rounded-full bg-orange-500">
-                            <a className="text-white text-center font-bold" href="/contact">
+                            <a className="text-white text-center font-bold text-xl px-4" href="/contact">
                                 Hubungi Kami
                             </a>
                         </div>
