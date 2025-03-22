@@ -105,11 +105,11 @@ export default function Review() {
                 <img src={review.src} alt={review.alt} className="rounded-xl" />
               </SwiperSlide>
             ))}
-            <div className="review-custom-swiper-button-prev bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85">
-              <FaArrowLeft />
+            <div className="review-custom-swiper-button-prev absolute bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-60 hover:opacity-90 w-12 h-12 md:h-16 md:w-16">
+            <FaArrowLeft className='md:w-8 w-6 md:h-8 h-6 text-white' />
             </div>
-            <div className="review-custom-swiper-button-next bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85">
-              <FaArrowRight />
+            <div className="review-custom-swiper-button-next absolute bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-60 hover:opacity-90 w-12 h-12 md:h-16 md:w-16">
+            <FaArrowRight className='md:w-8 w-6 md:h-8 h-6 text-white' />
             </div>
             <div className="swiper-custom-scrollbar "></div>
           </Swiper>

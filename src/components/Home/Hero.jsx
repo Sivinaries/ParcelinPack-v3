@@ -80,7 +80,7 @@ function Hero() {
                 className="w-full h-full object-cover md:object-fill"
               />
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-black"></div>
-              <div className="absolute bottom-8 px-6 text-white space-y-6">
+              <div className="absolute bottom-8 px-4 text-white md:space-y-6">
                 <h2 className="text-4xl md:text-6xl hover:underline transition-all duration-100 delay-100">{slide.title}</h2>
                 <ul className="hidden md:flex gap-x-32">
                   {slide.products.map((product, i) => (
@@ -95,11 +95,11 @@ function Hero() {
         ))}
       </Swiper>
 
-      <div className="custom-swiper-button-prev bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85">
-        <FaArrowLeft className='' />
+      <div className="custom-swiper-button-prev absolute bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-60 hover:opacity-90 w-12 h-12 md:h-16 md:w-16">
+        <FaArrowLeft className='md:w-8 w-6 md:h-8 h-6 text-white' />
       </div>
-      <div className="custom-swiper-button-next bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85">
-        <FaArrowRight />
+      <div className="custom-swiper-button-next absolute bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-60 hover:opacity-90 w-12 h-12 md:h-16 md:w-16">
+        <FaArrowRight className='md:w-8 w-6 md:h-8 h-6 text-white' />
       </div>
     </div>
   );

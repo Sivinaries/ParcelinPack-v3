@@ -12,7 +12,7 @@ export default function Team() {
         <div className="flex items-center justify-center">
           <h1 className="text-3xl md:text-5xl font-bold md:mb-8">Tim Kami</h1>
         </div>
-        <div className="md:hidden flex flex-col items-center justify-center px-4 text-justify gap-y-8">
+        <div className="md:hidden flex flex-col items-center justify-center text-justify gap-y-8">
           <div className="h-auto">
             <p className="text-base font-extralight">
               Di Parcelinpack, kami percaya bahwa kemasan terbaik lahir dari

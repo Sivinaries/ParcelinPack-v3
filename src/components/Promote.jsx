@@ -22,7 +22,7 @@ export default function Promote() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative grid place-items-center h-full w-full px-4 my-8">
+    <div className="relative grid place-items-center h-full w-full px-4 md:px-20 my-12 md:my-32">
       <div className="hidden md:grid relative w-full grid-cols-5">
         <img src={"/images/promote/bg-vector.png"} alt="Wood Texture" className="absolute h-full object-fill w-full z-10" />
         <Section className="rounded-l-3xl" />
