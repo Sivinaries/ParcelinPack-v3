@@ -60,7 +60,7 @@ function Hero() {
   ];
 
   return (
-    <div className="w-full h-screen overflow-hidden relative">
+    <div className="grid grid-cols-1 w-full h-screen overflow-hidden relative">
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation={{

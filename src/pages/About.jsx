@@ -10,7 +10,6 @@ import Team from "../components/About/Team";
 import QuoteSection from "../components/About/Quote";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import Packaging from "../components/Home/Packaging";
 
 function About() {
 

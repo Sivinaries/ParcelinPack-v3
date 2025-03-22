@@ -75,28 +75,26 @@ function Pelanggan() {
   );
 
   return (
-    <div className="grid grid-cols-1 h-fit bg-gray-100 bg-opacity-70">
-      <div className="my-10">
+    <div className="grid grid-cols-1 h-fit bg-gray-100 bg-opacity-70 w-full">
+      <div className="my-4 md:my-40 space-y-8 md:space-y-12">
+        <div className="md:w-1/2 mx-auto">
+          <h1 className="text-4xl md:text-5xl text-center font-bold">
+            7500+ Pelanggan
+          </h1>
+          <h1 className="text-xl md:text-3xl text-center font-extralight">
+            Sudah mempercayakan
+          </h1>
+          <h1 className="text-xl md:text-3xl text-center font-extralight">
+            packagingnya kepada Kami
+          </h1>
+        </div>
         <div className="space-y-6">
-          <div className="md:w-1/2 mx-auto">
-            <h1 className="text-4xl md:text-5xl text-center font-bold">
-              7500+ Pelanggan
-            </h1>
-            <h1 className="text-xl md:text-3xl text-center font-extralight">
-              Sudah mempercayakan
-            </h1>
-            <h1 className="text-xl md:text-3xl text-center font-extralight">
-              packagingnya kepada Kami
-            </h1>
-          </div>
-          <div className="space-y-6">
-            {resolvedCustomers["1"] &&
-              renderSlider(resolvedCustomers["1"], settings)}
-            {resolvedCustomers["2"] &&
-              renderSlider(resolvedCustomers["2"], settings2)}
-            {resolvedCustomers["3"] &&
-              renderSlider(resolvedCustomers["3"], settings)}
-          </div>
+          {resolvedCustomers["1"] &&
+            renderSlider(resolvedCustomers["1"], settings)}
+          {resolvedCustomers["2"] &&
+            renderSlider(resolvedCustomers["2"], settings2)}
+          {resolvedCustomers["3"] &&
+            renderSlider(resolvedCustomers["3"], settings)}
         </div>
       </div>
     </div>

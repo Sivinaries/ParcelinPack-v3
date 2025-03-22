@@ -34,7 +34,12 @@ export default function Navbar() {
     const closeModal = () => setShowModal(false);
 
     return (
-        <motion.nav className="shadow-xl z-50 fixed top-0 right-0 left-0 p-2 bg-white">
+        <motion.nav 
+            initial={{ y: -100, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }} 
+            transition={{ duration: 0.5 }}
+            className="shadow-xl z-50 fixed top-0 right-0 left-0 p-2 bg-white"
+        >
             <div className="flex justify-between items-center">
                 <a className="flex items-center" href="/">
                     <img className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" src={logo} alt="Logo Parcelin" />
@@ -60,9 +65,15 @@ export default function Navbar() {
                     ) : (
                         <div className="hidden lg:flex gap-4 xl:gap-8 items-center">
                             {navLinks.map((link, index) => (
-                                <a key={index} href={link.href} className="text-black text-sm lg:text-base xl:text-lg font-semibold hover:scale-110 duration-200 delay-150">
+                                <motion.a 
+                                    key={index} 
+                                    href={link.href} 
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                    className="text-black text-sm lg:text-base xl:text-lg font-semibold"
+                                >
                                     {link.title}
-                                </a>
+                                </motion.a>
                             ))}
                         </div>
                     )}
@@ -81,15 +92,28 @@ export default function Navbar() {
 
             <AnimatePresence>
                 {showModal && isMobileView && (
-                    <motion.div className="top-16 fixed inset-0 flex flex-col items-center bg-white opacity-80">
+                    <motion.div 
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -50, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="top-16 fixed inset-0 flex flex-col items-center bg-white opacity-80"
+                    >
                         <div className="relative h-full w-full py-4 px-2">
                             <div className="flex flex-col gap-6 sm:gap-8 h-full text-left">
                                 {navLinks.map((link, index) => (
-                                    <span key={index} className="text-black text-2xl" onClick={closeModal}>
+                                    <motion.span 
+                                        key={index} 
+                                        onClick={closeModal} 
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="text-black text-2xl"
+                                    >
                                         <a href={link.href} className="hover:underline">
                                             {link.title}
                                         </a>
-                                    </span>
+                                    </motion.span>
                                 ))}
                             </div>
                         </div>

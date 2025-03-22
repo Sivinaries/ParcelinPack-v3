@@ -5,8 +5,8 @@ import { LuArrowUpRight } from 'react-icons/lu'
 function Portfolio() {
   return (
     <div className="grid grid-cols-1 h-full w-full">
-      <div className="my-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 h-auto md:h-[539px]">
+      <div className="my-4 md:my-40 space-y-8 md:space-y-12">
+      <div className="grid grid-cols-1 md:grid-cols-5 h-auto md:h-[539px]">
           <div className="flex items-center bg-black text-white font-bold col-span-1 md:col-span-2">
             <div className="space-y-2 md:space-y-6 mx-4 md:mx-20 py-4 md:py-0">
               <h1 className="text-4xl md:text-5xl md:tracking-tighter md:leading-normal">
@@ -42,7 +42,7 @@ function Portfolio() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </div>
   );

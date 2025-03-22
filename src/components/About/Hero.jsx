@@ -11,9 +11,9 @@ function Hero() {
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
       <div className="relative z-10 h-full p-4 xl:p-8 my-32 md:my-64">
-          <h1 className="text-white text-center text-4xl lg:text-7xl md:text-8xl font-light drop-shadow-md">
-            About Us
-          </h1>
+        <h1 className="text-white text-center text-4xl lg:text-7xl md:text-8xl font-light drop-shadow-md">
+          About Us
+        </h1>
       </div>
     </div>
   );

@@ -6,12 +6,12 @@ import team5 from "../../assets/images/team/team5.jpg";
 
 export default function Team() {
   return (
-    <div className="flex items-center justify-center md:p-12 bg-white mx-auto w-screen-lg md:h-screen">
-      <div className="flex flex-col gap-y-4 h-full my-6">
+    <div className="flex items-center justify-center  bg-white mx-auto h-full md:h-screen">
+      <div className="flex flex-col h-full my-4 md:my-40 space-y-8 md:space-y-12 mx-4 md:mx-20">
+
         <div className="flex items-center justify-center">
           <h1 className="text-3xl md:text-5xl font-bold md:mb-8">Tim Kami</h1>
         </div>
-
         <div className="md:hidden flex flex-col items-center justify-center px-4 text-justify gap-y-8">
           <div className="h-auto">
             <p className="text-base font-extralight">

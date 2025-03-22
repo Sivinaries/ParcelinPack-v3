@@ -18,7 +18,7 @@ function Packaging() {
 
     return (
         <div className="grid grid-cols-1 h-full bg-white">
-            <div className="my-4 space-y-8 md:space-y-12">
+            <div className="my-2 md:my-20 space-y-8 md:space-y-12">
                 <div className="mx-4 md:mx-20">
                     <div>
                         <h1 className="text-[30px] md:text-[120px]">Packaging Kami Cocok</h1>
@@ -28,14 +28,14 @@ function Packaging() {
                             <h1 className="text-[30px] md:text-[120px]"> untuk</h1>
                         </div>
                         <div className="my-auto">
-                            <div className="grid grid-cols-1 w-full max-w-fit bg-orange-400 bg-opacity-80 rounded-full z-30">
+                            <div className="grid grid-cols-1 w-full bg-orange-400 bg-opacity-80 rounded-full z-30">
                                 <div className="h-full flex justify-center">
                                     <Slider className="w-full h-full" {...settings}>
                                         {[
-                                            "Fashion", "Skincare", "MakeUp", "Parfum", "Makanan", "Minuman", 
+                                            "Fashion", "Skincare", "MakeUp", "Parfum", "Makanan", "Minuman",
                                             "Hijab", "Elektronik", "Aksesoris", "Perhiasan", "Event"
                                         ].map((item, index) => (
-                                            <div key={index} className="h-full w-fit flex justify-center min-h-[24px] lg:min-[50px]: md:min-h-80px]">
+                                            <div key={index} className="h-full w-fit flex justify-center min-h-[24px] md:min-h-80px]">
                                                 <h1 className="text-[13px] lg:text-[46px] md:text-[60px] font-extralight text-black flex items-center">
                                                     {item}
                                                     <img src={star} alt="Running Star" className="mx-3 md:mx-6 h-4 md:h-10" />

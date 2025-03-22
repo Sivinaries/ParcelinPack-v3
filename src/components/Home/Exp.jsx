@@ -73,8 +73,8 @@ function Exp() {
   const formatProduction = (num) => (num === 10 ? "10 Juta" : `${num} Juta`);
 
   return (
-    <div className="grid grid-cols-1 h-full bg-white" ref={sectionRef}>
-      <div className="my-10 space-y-8 md:space-y-12">
+    <div className="grid grid-cols-1 h-full bg-white w-full" ref={sectionRef}>
+      <div className="my-4 md:my-40 space-y-8 md:space-y-12">
         <div className="mx-4 md:mx-20">
           <div className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-6">
             <div className="w-full md:w-1/2">
