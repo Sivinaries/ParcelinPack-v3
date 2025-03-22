@@ -75,7 +75,7 @@ function Hero() {
           <SwiperSlide key={index}>
             <a href="/service" className="block w-full h-full">
               <img
-                src={`/images/hero/${slide.image}`}
+                src={`/images/home/${slide.image}`}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover md:object-fill"
               />

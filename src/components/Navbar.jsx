@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/images/logo.png";
+import logo from "/images/logo.png";
 import { BsX } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 
