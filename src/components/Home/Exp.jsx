@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import exp1 from "../../assets/images/exp/exp1.png";
-import exp2 from "../../assets/images/exp/exp2.png";
-import exp3 from "../../assets/images/exp/exp3.png";
+import exp1 from "/images/exp/exp1.png";
+import exp2 from "/images/exp/exp2.png";
+import exp3 from "/images/exp/exp3.png";
 
 function Exp() {
   const [yearsCount, setYearsCount] = useState(0);

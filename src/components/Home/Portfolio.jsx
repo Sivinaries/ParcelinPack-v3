@@ -1,5 +1,5 @@
-import model from "../../assets/images/portofolio/model.png";
-import hampers from "../../assets/images/portofolio/hampers.jpg";
+import model from "/images/portofolio/model.png";
+import hampers from "/images/portofolio/hampers.jpg";
 import { LuArrowUpRight } from 'react-icons/lu'
 
 function Portfolio() {

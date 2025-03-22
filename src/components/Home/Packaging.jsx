@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import star from '../../assets/images/star2.png';
+import star from '/images/star2.png';
 
 function Packaging() {
     const settings = {

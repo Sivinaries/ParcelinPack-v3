@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import star from '../../assets/images/star.png';
+import star from '/images/star.png';
 
 function Runningtext() {
   const settings = {

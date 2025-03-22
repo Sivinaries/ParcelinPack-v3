@@ -1,4 +1,4 @@
-import pack from "../../assets/images/pack/pack.png"
+import pack from "/images/pack/pack.png"
 
 function Parcel() {
   return (

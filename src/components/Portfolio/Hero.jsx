@@ -1,4 +1,4 @@
-import background from "../../assets/images/portofolio/portfolio.png"
+import background from "/images/portofolio/portfolio.png"
 
 function Hero() {
   return (

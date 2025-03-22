@@ -1,8 +1,8 @@
-import team1 from "../../assets/images/team/team1.png";
-import team2 from "../../assets/images/team/team2.jpg";
-import team3 from "../../assets/images/team/team3.png";
-import team4 from "../../assets/images/team/team4.jpg";
-import team5 from "../../assets/images/team/team5.jpg";
+import team1 from "/images/team/team1.png";
+import team2 from "/images/team/team2.jpg";
+import team3 from "/images/team/team3.png";
+import team4 from "/images/team/team4.jpg";
+import team5 from "/images/team/team5.jpg";
 
 export default function Team() {
   return (

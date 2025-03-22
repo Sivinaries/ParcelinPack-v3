@@ -1,7 +1,7 @@
-import lay1 from "../../assets/images/layanan/lay1.png";
-import lay2 from "../../assets/images/layanan/lay2.png";
-import lay3 from "../../assets/images/layanan/lay3.png";
-import lay4 from "../../assets/images/layanan/lay4.png";
+import lay1 from "/images/layanan/lay1.png";
+import lay2 from "/images/layanan/lay2.png";
+import lay3 from "/images/layanan/lay3.png";
+import lay4 from "/images/layanan/lay4.png";
 import { MdArrowOutward } from "react-icons/md";
 
 function Layanan() {

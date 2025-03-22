@@ -1,4 +1,4 @@
-import background from "../../assets/images/story/background.png";
+import background from "/images/story/background.png";
 
 function Story() {
   return (

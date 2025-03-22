@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import icon from "../assets/images/promote/icon.png";
+import icon from "/images/promote/icon.png";
 import { useNavigate } from 'react-router-dom';
 
 function Section({ children, className }) {

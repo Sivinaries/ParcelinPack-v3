@@ -1,4 +1,4 @@
-import cute from '../../assets/images/cute.png'
+import cute from '/images/home/cute.png'
 import { LuArrowUpRight } from 'react-icons/lu'
 
 function Cute() {

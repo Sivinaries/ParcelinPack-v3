@@ -1,4 +1,4 @@
-import background from "../../assets/images/quote/background.png";
+import background from "/images/quote/background.png";
 import { RiDoubleQuotesL } from "react-icons/ri";
 
 function QuoteSection() {
