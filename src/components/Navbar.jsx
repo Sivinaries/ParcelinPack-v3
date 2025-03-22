@@ -38,11 +38,11 @@ export default function Navbar() {
             initial={{ y: -100, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.5 }}
-            className="shadow-xl z-50 fixed top-0 right-0 left-0 p-2 bg-white"
+            className="shadow-xl z-50 fixed top-0 right-0 left-0 p-4 md:p-6 bg-white"
         >
             <div className="flex justify-between items-center">
                 <a className="flex items-center" href="/">
-                    <img className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20" src={logo} alt="Logo Parcelin" />
+                    <img className="w-12 md:h-12" src={logo} alt="Logo Parcelin" />
                     {!isMobileView && (
                         <div className="ml-2 sm:ml-3">
                             <p className="text-black text-left text-lg sm:text-base lg:text-xl xl:text-2xl font-bold">
