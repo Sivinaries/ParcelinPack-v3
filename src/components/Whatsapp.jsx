@@ -21,7 +21,7 @@ function Whatsapp() {
         whileTap={{ scale: 0.9 }}
       >
         <button onClick={scrollToTop}>
-          <div className="bg-amber-600 opacity-85 shadow-amber-600 xl:p-2 rounded-3xl px-2 py-6 hover:opacity-100">
+          <div className="bg-gradient-to-t from-orange-400 to-orange-600 shadow-md opacity-85 shadow-orange-600 xl:p-2 rounded-3xl px-2 py-6 hover:opacity-100">
             <FaArrowUp className="text-white xl:w-6 xl:h-20 w-4 h-8" />
           </div>
         </button>

@@ -83,7 +83,7 @@ export default function Why() {
   };
 
   return (
-    <div className="bg-white grid grid-cols-1 h-full w-full">
+    <div className="bg-white grid grid-cols-1 relative h-full w-full">
       <div className="my-4 md:my-40">
         <div className="mx-4 md:mx-20  space-y-8 md:space-y-12">
           <div className="">
@@ -132,18 +132,18 @@ export default function Why() {
           {!isAtStart && (
             <button
               onClick={() => scroll("left")}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 p-2 md:p-4 rounded-full shadow-md hover:bg-black/40 transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85 p-3 md:p-6 rounded-full transition-colors z-50"
             >
-              <FaArrowLeft color="white" />
+              <FaArrowLeft className="w-6 md:w-8 h-6 md:h-8" color="white" />
             </button>
           )}
 
           {!isAtEnd && (
             <button
               onClick={() => scroll("right")}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 p-2 md:p-4 rounded-full shadow-md hover:bg-black/40 transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85 p-3 md:p-6 rounded-full transition-colors z-50"
             >
-              <FaArrowRight color="white" />
+              <FaArrowRight className="w-6 md:w-8 h-6 md:h-8" color="white" />
             </button>
           )}
         </div>

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import icon from "/images/promote/icon.png";
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Section({ children, className }) {
 
@@ -24,20 +25,22 @@ export default function Promote() {
     <div className="relative grid place-items-center h-full w-full px-4 my-8">
       <div className="hidden md:grid relative w-full grid-cols-5">
         <img src={"/images/promote/bg-vector.png"} alt="Wood Texture" className="absolute h-full object-fill w-full z-10" />
-        <Section className="rounded-l-xl" />
+        <Section className="rounded-l-3xl" />
         <Section className="col-span-3 flex items-center justify-center text-center">
           <div className="space-y-4 py-6">
             <h1 className="text-4xl text-white font-medium">
               Tunggu apalagi, Yuk hubungi kami sekarang!
             </h1>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
               onClick={() => navigate('/contact')}
-              className="bg-[#FD9F59] text-2xl text-white font-extrabold rounded-full p-4 w-1/3 relative z-40">
+              className="bg-gradient-to-r from-orange-400 to-orange-600 shadow-md text-2xl px-6 hover:underline text-white font-extrabold rounded-full p-4 relative z-40">
               Hubungi Kami
-            </button>
+            </motion.button>
           </div>
         </Section>
-        <Section className="rounded-r-xl">
+        <Section className="rounded-r-3xl">
           <div className="flex items-center justify-center relative">
             <img
               src={icon}
@@ -50,18 +53,22 @@ export default function Promote() {
 
       <div className="block md:hidden relative w-full">
         <img src={"/images/promote/bg-vector.png"} alt="Wood Texture" className="absolute h-full object-fill w-full z-10" />
-        <Section className="rounded-xl flex flex-col items-center text-center py-10">
-          <h1 className="text-2xl text-white font-bold">
-            Tunggu apalagi, Yuk hubungi
-          </h1>
-          <h1 className="text-2xl text-white font-bold">
-            kami sekarang!
-          </h1>
-          <button
+        <Section className="rounded-3xl flex flex-col items-center text-center py-6 space-y-4">
+          <div>
+            <h1 className="text-xl text-white font-bold">
+              Tunggu apalagi, Yuk hubungi
+            </h1>
+            <h1 className="text-xl text-white font-bold">
+              kami sekarang!
+            </h1>
+          </div>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
             onClick={() => navigate('/contact')}
-            className="bg-[#FD9F59] text-xl text-white font-extrabold rounded-full p-2.5 mt-4 w-1/2 relative z-40">
+            className="bg-gradient-to-r from-orange-400 to-orange-600 shadow-md text-lg text-white font-extrabold rounded-full p-2 px-6 relative z-40">
             Hubungi Kami
-          </button>
+          </motion.button>
         </Section>
       </div>
     </div>

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "/images/logo.png";
 import { BsX } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
+import { LuArrowUpRight } from 'react-icons/lu'
+
 
 export default function Navbar() {
     const [showModal, setShowModal] = useState(false);
@@ -34,9 +36,9 @@ export default function Navbar() {
     const closeModal = () => setShowModal(false);
 
     return (
-        <motion.nav 
-            initial={{ y: -100, opacity: 0 }} 
-            animate={{ y: 0, opacity: 1 }} 
+        <motion.nav
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             className="shadow-xl z-50 fixed top-0 right-0 left-0 p-4 md:p-6 bg-white"
         >
@@ -55,8 +57,11 @@ export default function Navbar() {
                 <div className="flex gap-x-2">
                     {isMobileView ? (
                         <>
-                            <a href="/contact" className="p-2 rounded-full bg-orange-500 text-white text-center font-bold">
+                            <a href="/contact"
+                                className="flex p-2 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 shadow-md text-white text-center px-3 font-bold">
                                 Hubungi Kami
+                                <LuArrowUpRight className="text-white my-auto" size={20} />
+
                             </a>
                             <button className="text-black" onClick={toggleModal}>
                                 {showModal ? <BsX size={42} /> : <FaBars className="w-8 h-8" />}
@@ -65,9 +70,9 @@ export default function Navbar() {
                     ) : (
                         <div className="hidden lg:flex gap-4 xl:gap-8 items-center">
                             {navLinks.map((link, index) => (
-                                <motion.a 
-                                    key={index} 
-                                    href={link.href} 
+                                <motion.a
+                                    key={index}
+                                    href={link.href}
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ type: "spring", stiffness: 300 }}
                                     className="text-black text-sm lg:text-base xl:text-lg font-semibold"
@@ -80,19 +85,25 @@ export default function Navbar() {
                 </div>
 
                 {!isMobileView && (
-                    <div className="hidden lg:flex">
-                        <div className="p-2 rounded-full bg-orange-500">
-                            <a className="text-white text-center font-bold text-xl px-4" href="/contact">
-                                Hubungi Kami
+                    <div className="hidden md:flex">
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="p-4 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 shadow-md hover:underline">
+                            <a className='flex' href="/contact">
+                                <h1 className="text-white hover:underline transition-all duration-100 delay-100 text-center md:text-xl px-4 font-bold">
+                                    Hubungi Kami
+                                </h1>
+                                <LuArrowUpRight className="text-white my-auto" size={24} />
                             </a>
-                        </div>
+                        </motion.div>
                     </div>
                 )}
             </div>
 
             <AnimatePresence>
                 {showModal && isMobileView && (
-                    <motion.div 
+                    <motion.div
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -50, opacity: 0 }}
@@ -102,9 +113,9 @@ export default function Navbar() {
                         <div className="relative h-full w-full py-4 px-2">
                             <div className="flex flex-col gap-6 sm:gap-8 h-full text-left">
                                 {navLinks.map((link, index) => (
-                                    <motion.span 
-                                        key={index} 
-                                        onClick={closeModal} 
+                                    <motion.span
+                                        key={index}
+                                        onClick={closeModal}
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.1 }}

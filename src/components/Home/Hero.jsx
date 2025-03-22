@@ -95,10 +95,10 @@ function Hero() {
         ))}
       </Swiper>
 
-      <div className="custom-swiper-button-prev bg-orange-400">
+      <div className="custom-swiper-button-prev bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85">
         <FaArrowLeft className='' />
       </div>
-      <div className="custom-swiper-button-next bg-orange-400">
+      <div className="custom-swiper-button-next bg-gradient-to-r from-orange-400 to-orange-600 shadow-md shadow-orange-600 opacity-85">
         <FaArrowRight />
       </div>
     </div>
