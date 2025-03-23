@@ -74,15 +74,6 @@ export default function Detail() {
             <div className="flex flex-col justify-center items-center gap-y-10 py-4">
                 <h1 className="text-xl md:text-2xl">Packaging lain</h1>
                 <div className="flex flex-col md:flex-row justify-center gap-4">
-                    {/* {products.slice(0, 4).map((p, idx) => (
-            <Card
-              key={idx}
-              img={`/images/product/${p.img}`}
-              name={p.name}
-              slug={p.slug}
-              tags={p.tags}
-            />
-          ))} */}
                 </div>
             </div>
         </div>

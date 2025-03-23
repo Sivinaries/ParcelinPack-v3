@@ -26,7 +26,7 @@ export default function Carousel({ images, path }) {
         {images.map((image, index) => (
           <SwiperSlide key={index}>
             <img
-              src={`https://admin.parcelinpack.id/storage/${image}`}
+              src={`http://localhost:8000/storage/${image}`}
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />

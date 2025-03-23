@@ -38,20 +38,24 @@ export default function Product() {
         desc={category.kategori.desc}
         img={category.kategori.img}
       />
-      <div className="flex flex-col justify-center items-center p-6 sm:p-10 my-10 space-y-6">
-        <div className="w-full md:w-1/2">
-          <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {filteredProducts.map((product, index) => (
-            <Card
-              key={index}
-              img={`https://admin.parcelinpack.id/storage/${product.img}`}
-              name={product.product}
-              tags={[]}
-              slug={product.id.toString()}
-            />
-          ))}
+      <div className="grid grid-cols-1 h-full bg-white w-full">
+        <div className="md:my-4 my-2 space-y-8 md:space-y-12">
+          <div className="w-full md:w-1/2 mx-auto">
+            <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          </div>
+          <div className="mx-4 md:mx-20">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {filteredProducts.map((product, index) => (
+                <Card
+                  key={index}
+                  img={`http://localhost:8000/storage/${product.img}`}
+                  name={product.product}
+                  tags={[]}
+                  slug={product.id.toString()}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

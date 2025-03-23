@@ -1,24 +1,30 @@
 import { MdArrowOutward } from "react-icons/md";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom"
 
 export default function Card({ img, name, slug }) {
   return (
-    <div className="flex flex-wrap h-full w-full border shadow-lg rounded-xl overflow-hidden p-2">
+    <div className="flex flex-wrap h-full w-full border shadow-md rounded-3xl overflow-hidden p-2">
       <img
-        className="w-full max-h-[200px] object-cover rounded-lg"
+        className="w-full max-h-[200px] object-cover rounded-3xl"
         src={img}
         alt={name}
       />
-      <div className="flex flex-col p-4 gap-y-4">
-        <h2 className="text-xl font-semibold">{name}</h2>
-        <Link
-          to={slug}
-          className="flex items-center justify-between px-4 py-2 mt-4 bg-white border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white transition-all"
+      <div className="md:p-4 p-2 space-y-4 w-full">
+        <div>
+          <h1 className="text-xl font-semibold">{name}</h1>
+        </div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="p-4 border-orange-500 border-2 hover:bg-gradient-to-r from-orange-400 to-orange-600 shadow-md w-full rounded-full"
         >
-          <p>Lihat Selengkapnya</p>
-          <MdArrowOutward className="w-6 h-6" />
-        </Link>
+          <Link className="flex" to={slug}>
+            <h1 className="text-black hover:underline transition-all duration-100 delay-100 text-center md:text-base w-full font-bold">Lihat Selengkapnya</h1>
+            <MdArrowOutward className="text-black my-auto" size={24} />
+          </Link>
+        </motion.div>
       </div>
     </div>
   );

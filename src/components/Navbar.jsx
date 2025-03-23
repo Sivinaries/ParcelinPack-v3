@@ -15,7 +15,7 @@ export default function Navbar() {
             { title: "Beranda", href: "/" },
             { title: "Tentang Kami", href: "/about" },
             { title: "Layanan Kami", href: "/service" },
-            { title: "Kemasan Produk", href: "/service/6" },
+            { title: "Kemasan Produk", href: "/service/1" },
             { title: "Blog", href: "/blog" },
             { title: "Portofolio", href: "/portfolio" },
         ],

@@ -3,16 +3,21 @@ import PropTypes from "prop-types";
 
 export default function Layanan({ categories }) {
   return (
-    <div className="p-6 sm:p-10">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-        {categories.map((category, index) => (
-          <Card
-            key={index}
-            img={`https://admin.parcelinpack.id/storage/${category.img}`}
-            name={category.kategori}
-            slug={category.id.toString()}
-          />
-        ))}
+    <div className="grid grid-cols-1 h-full bg-white w-full">
+      <div className="md:my-4 my-2">
+        <div className="mx-4 md:mx-20">
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            {categories.map((category, index) => (
+              <Card
+                key={index}
+                img={`http://localhost:8000/storage/${category.img}`}
+                name={category.kategori}
+                slug={category.id.toString()}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
