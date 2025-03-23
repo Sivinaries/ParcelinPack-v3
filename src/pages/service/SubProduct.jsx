@@ -44,6 +44,8 @@ export default function SubProduct() {
     );
   }
 
+  console.log(subProducts);
+
   return (
     <>
       <HeroProduct
@@ -53,18 +55,20 @@ export default function SubProduct() {
       />
       <div className="grid grid-cols-1 h-full bg-white w-full">
         <div className="md:my-4 my-2">
-          <div className="mx-4 md:mx-20">
+          <div className="mx-4 md:mx-20 space-y-2 md:space-y-6">
+              <h1 className="text-4xl font-bold">{subProducts.length > 0 ? subProducts[0].product.product : "No product found"}</h1>
+              <h1 className="font-light text-lg">{subProducts.length > 0 ? subProducts[0].product.desc : "No product desc"}</h1>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
               {subProducts.map((product, index) => (
                 <Card
-                key={index}
-                img={`http://localhost:8000/storage/${product.img1}`}
-                name={product.subproduct}
-                tags={product.tags ? product.tags.map(tag => tag.tag) : []} // Pastikan tags dalam bentuk array
-                slug={product.id.toString()}
-                minOrder={product.min}
-                price={formatToIDR(product.price)}
-              />
+                  key={index}
+                  img={`http://localhost:8000/storage/${product.img1}`}
+                  name={product.subproduct}
+                  tags={product.tags ? product.tags.map(tag => tag.tag) : []} // Pastikan tags dalam bentuk array
+                  slug={product.id.toString()}
+                  minOrder={product.min}
+                  price={formatToIDR(product.price)}
+                />
               ))}
             </div>
           </div>

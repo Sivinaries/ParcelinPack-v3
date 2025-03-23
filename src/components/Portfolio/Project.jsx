@@ -1,5 +1,6 @@
 import useProject from "../../hooks/useProject";
 import Card from "../Service/Card";
+import { Link } from "react-router-dom";
 
 function Project() {
   const { projects, error, loading } = useProject();
@@ -23,13 +24,14 @@ function Project() {
       <div className="md:my-4 my-2">
         <div className="mx-4 md:mx-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-            {projects.map((project, index) => (
-              <Card
-                key={index} // Pastikan pakai key
-                img={`http://localhost:8000/storage/${project.img1}`}
-                name={project.project}
-                slug={project.id}
-              />
+            {projects.map((project) => (
+              <Link to={`/project/${project.id}`} key={project.id}>
+                <Card
+                  img={`http://localhost:8000/storage/${project.img1}`}
+                  name={project.project}
+                  slug={project.id}
+                />
+              </Link>
             ))}
           </div>
         </div>

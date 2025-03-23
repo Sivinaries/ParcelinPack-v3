@@ -11,6 +11,8 @@ import Product from "./pages/service/Product";
 import SubProduct from "./pages/service/SubProduct";
 import Detail from "./pages/service/Detail";
 import Blog from "./pages/Blog";
+import PostDetail from "./components/Blog/PostDetail";
+import ProjectDetail from "./components/Portfolio/ProjectDetail";
 
 const pixelId = "547087064335063"; // Ganti dengan Pixel ID kamu
 
@@ -41,7 +43,9 @@ function App() {
         </Route>
       </Route>
       <Route path="/blog" element={<Blog />} />
+      <Route path="/post/:idPost" element={<PostDetail />} />
       <Route path="/portfolio" element={<Porto />} />
+      <Route path="/project/:idProject" element={<ProjectDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>

@@ -38,6 +38,7 @@ export default function Detail() {
     return (
         <div className="grid grid-cols-1 h-full bg-white w-full">
             <div className="md:my-20 my-8">
+                
                     <MainSection
                         name={subProduct.subproduct.subproduct}
                         price={formatToIDR(subProduct.subproduct.price)}
