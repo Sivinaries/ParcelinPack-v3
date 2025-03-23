@@ -20,7 +20,7 @@ function Project() {
 
   return (
     <div className="grid grid-cols-1 h-full bg-white w-full">
-      <div className="md:my-4 my-w">
+      <div className="md:my-4 my-2">
         <div className="mx-4 md:mx-20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
             {projects.map((project, index) => (

@@ -48,25 +48,26 @@ export default function SubProduct() {
     <>
       <HeroProduct
         title={category.kategori.kategori}
+        img={category.kategori.img}
         desc={category.kategori.desc}
       />
-      <div className="p-6 sm:p-10 space-y-6">
-        <h1 className="text-3xl font-bold text-black">
-          {product.product.product}
-        </h1>
-        <p>{product.product.desc}</p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-          {subProducts.map((product, index) => (
-            <Card
-              key={index}
-              img={`https://admin.parcelinpack.id/storage/${product.img1}`}
-              name={product.subproduct}
-              tags={product.tags}
-              slug={product.id.toString()}
-              minOrder={product.min}
-              price={formatToIDR(product.price)}
-            />
-          ))}
+      <div className="grid grid-cols-1 h-full bg-white w-full">
+        <div className="md:my-4 my-2">
+          <div className="mx-4 md:mx-20">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+              {subProducts.map((product, index) => (
+                <Card
+                key={index}
+                img={`http://localhost:8000/storage/${product.img1}`}
+                name={product.subproduct}
+                tags={product.tags ? product.tags.map(tag => tag.tag) : []} // Pastikan tags dalam bentuk array
+                slug={product.id.toString()}
+                minOrder={product.min}
+                price={formatToIDR(product.price)}
+              />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
