@@ -28,7 +28,7 @@ export default function Carousel({ images, path }) {
             <img
               src={`http://localhost:8000/storage/${image}`}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover rounded-3xl"
+              className="w-full h-full object-center"
             />
           </SwiperSlide>
         ))}

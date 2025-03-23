@@ -36,46 +36,50 @@ export default function Detail() {
     ]
 
     return (
-        <div className="flex flex-col gap-y-10 px-4 md:pt-20 md:px-20">
-            <MainSection
-                name={subProduct.subproduct.subproduct}
-                price={formatToIDR(subProduct.subproduct.price)}
-                desc={subProduct.subproduct.desc1}
-                minOrder={subProduct.subproduct.min}
-                tags={[]}
-                images={[subProduct.subproduct.img1, subProduct.subproduct.img2, subProduct.subproduct.img3]}
-                path={[]}
-            />
+        <div className="grid grid-cols-1 h-full bg-white w-full">
+            <div className="md:my-20 my-8">
+                    <MainSection
+                        name={subProduct.subproduct.subproduct}
+                        price={formatToIDR(subProduct.subproduct.price)}
+                        desc={subProduct.subproduct.desc1}
+                        minOrder={subProduct.subproduct.min}
+                        tags={[]}
+                        images={[subProduct.subproduct.img1, subProduct.subproduct.img2, subProduct.subproduct.img3]}
+                        path={[]}
+                    />
 
-            {advantages.map((advantage, idx) => (
-                <Advantage
-                    key={idx}
-                    image={advantage.image}
-                    title={advantage.title}
-                    desc={advantage.desc}
-                    idx={idx}
-                />
-            ))}
-
-            <div className="flex flex-col justify-center items-center gap-y-10 bg-gray-200 py-8">
-                <h1 className="text-xl md:text-2xl">Temukan inspirasi dari kami</h1>
-                <div className="flex flex-wrap justify-center gap-4">
-                    {[1, 2, 3, 4].map((i) => (
-                        <img
-                            key={i}
-                            className="w-24 h-24 md:w-40 md:h-40 object-cover"
-                            src={`/images/product/inspired/inspired${i}.png`}
-                            alt={`inspired${i}`}
+                    {/* {advantages.map((advantage, idx) => (
+                        <Advantage
+                            key={idx}
+                            image={advantage.image}
+                            title={advantage.title}
+                            desc={advantage.desc}
+                            idx={idx}
                         />
-                    ))}
-                </div>
-            </div>
+                    ))} */}
 
-            <div className="flex flex-col justify-center items-center gap-y-10 py-4">
-                <h1 className="text-xl md:text-2xl">Packaging lain</h1>
-                <div className="flex flex-col md:flex-row justify-center gap-4">
+                    {/* INSPIRASI */}
+                    <div className="flex flex-col justify-center items-center gap-y-10 bg-gray-200 py-8">
+                        <h1 className="text-xl md:text-2xl">Temukan inspirasi dari kami</h1>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {[1, 2, 3, 4].map((i) => (
+                                <img
+                                    key={i}
+                                    className="w-24 h-24 md:w-40 md:h-40 object-cover"
+                                    src={`/images/product/inspired/inspired${i}.png`}
+                                    alt={`inspired${i}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-center items-center gap-y-10 py-4">
+                        <h1 className="text-xl md:text-2xl">Packaging lain</h1>
+                        <div className="flex flex-col md:flex-row justify-center gap-4">
+                        </div>
+                    </div>
                 </div>
-            </div>
+
         </div>
     );
 }
