@@ -19,11 +19,11 @@ export default function MainSection({ name, minOrder, price, desc, tags, images,
             <h1 className="font-semibold text-lg md:text-2xl text-orange-500">{price} /pcs</h1>
             <h1 className="text-gray-900 text-lg md:text-xl">{desc}</h1>
 
-            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+            <div className="flex flex-wrap justify-start md:justify-start gap-2">
             {tags.map((tag, i) => (
-              <span key={i} className="bg-gray-100 text-gray-900 px-3 py-2 rounded-xl text-sm">
+              <h1 key={i} className="bg-gray-100 text-gray-900 px-4 py-2 rounded-3xl text-base md:text-lg">
                 {tag}
-              </span>
+              </h1>
             ))}
 
             </div>
