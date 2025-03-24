@@ -9,37 +9,33 @@ function Pelanggan() {
     2: [],
     3: [],
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadImages = async () => {
-      const images1 = import.meta.glob(
-        "../../assets/images/cus/1/*.{png,jpg,jpeg,svg}"
-      );
-      const images2 = import.meta.glob(
-        "../../assets/images/cus/2/*.{png,jpg,jpeg,svg}"
-      );
-      const images3 = import.meta.glob(
-        "../../assets/images/cus/3/*.{png,jpg,jpeg,svg}"
-      );
+      const imageFolders = {
+        1: import.meta.glob("../../assets/images/cus/1/*.{png,jpg,jpeg,svg}"),
+        2: import.meta.glob("../../assets/images/cus/2/*.{png,jpg,jpeg,svg}"),
+        3: import.meta.glob("../../assets/images/cus/3/*.{png,jpg,jpeg,svg}"),
+      };
 
       const loadFolder = async (images) => {
         return await Promise.all(
           Object.keys(images).map(async (path) => {
             const name = path.split("/").pop();
             const image = await images[path]();
-            return {
-              name: name,
-              src: image.default,
-            };
+            return { name, src: image.default };
           })
         );
       };
 
-      setResolvedCustomers({
-        1: await loadFolder(images1),
-        2: await loadFolder(images2),
-        3: await loadFolder(images3),
-      });
+      const resolvedData = {};
+      for (const key in imageFolders) {
+        resolvedData[key] = await loadFolder(imageFolders[key]);
+      }
+
+      setResolvedCustomers(resolvedData);
+      setIsLoading(false);
     };
 
     loadImages();
@@ -89,12 +85,15 @@ function Pelanggan() {
           </h1>
         </div>
         <div className="space-y-6">
-          {resolvedCustomers["1"] &&
-            renderSlider(resolvedCustomers["1"], settings)}
-          {resolvedCustomers["2"] &&
-            renderSlider(resolvedCustomers["2"], settings2)}
-          {resolvedCustomers["3"] &&
-            renderSlider(resolvedCustomers["3"], settings)}
+          {!isLoading ? (
+            Object.entries(resolvedCustomers).map(([key, customers]) => (
+              <div key={key}>
+                {renderSlider(customers, key === "2" ? settings2 : settings)}
+              </div>
+            ))
+          ) : (
+            <p className="text-center text-lg">Loading...</p>
+          )}
         </div>
       </div>
     </div>

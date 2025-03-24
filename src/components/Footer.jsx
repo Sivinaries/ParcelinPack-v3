@@ -24,24 +24,32 @@ const Footer = () => {
             <h6 className="font-bold">Perusahaan</h6>
             <ul className="text-sm space-y-2 text-slate-400">
               <li>
-                <Link to={"/"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/">
                   Beranda
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to={"/about"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/about">
                   Tentang Kami
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to={"/product"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/service">
                   Produk
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to={"/portfolio"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/portfolio">
                   Portofolio
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -49,47 +57,85 @@ const Footer = () => {
             <h6 className="font-bold">Layanan</h6>
             <ul className="text-sm space-y-2 text-slate-400">
               <li>
-                <Link to={"/product"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/service">
                   Kemasan Produk
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to={"/product"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/service">
                   Hampers & Corporate gift
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to={"/product"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/service">
                   Merchandise
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to={"/product"}>
+                <a
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  href="/service">
                   PR Packaging
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
           <div className="col-span-1 space-y-4">
             <h6 className="font-bold">Bantuan</h6>
             <ul className="text-sm space-y-2 text-slate-400">
-              <li>Help Center</li>
-              <li>Terms of service</li>
-              <li>Legal</li>
-              <li>Privacy Policy</li>
-              <li>Status</li>
+              <li>
+                <Link
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  to={"/"}>
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  to={"/"}>
+                  Terms of service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  to={"/"}>
+                  Legal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  to={"/"}>
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline hover:text-white delay-100 transition-all"
+                  to={"/"}>
+                  Status
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-span-1 space-y-4">
             <h6 className="font-bold">Ikuti Kami</h6>
             <div className='flex gap-4 xl:gap-8'>
-              <a href="https://www.instagram.com/parcelinpack/">
+              <a href="https://www.instagram.com/parcelinpack/" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className='text-white w-8 h-8' />
               </a>
-              <a href="">
+              <a href="" target="_blank" rel="noopener noreferrer">
                 <FaFacebookSquare className='text-white w-8 h-8' />
               </a>
-              <a href="https://www.tiktok.com/@parcelincompany">
+              <a href="https://www.tiktok.com/@parcelincompany" target="_blank" rel="noopener noreferrer">
                 <FaTiktok className='text-white w-8 h-8' />
               </a>
             </div>

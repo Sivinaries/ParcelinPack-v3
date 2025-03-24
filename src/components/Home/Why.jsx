@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Why() {
   const services = [
@@ -91,15 +92,22 @@ export default function Why() {
               Kenapa Parcelinpack
             </h1>
           </div>
-          <div
+          <motion.div
             ref={scrollContainerRef}
             className="flex overflow-x-auto snap-x snap-mandatory space-x-4 md:space-x-4 mx-auto max-w-full pb-4 scrollbar-hide"
             onScroll={updateScrollbarThumb}
+            animate={{ x: 0 }}
+            transition={{ type: "spring", stiffness: 100, damping: 15 }}
           >
             {services.map((service, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 key={index}
-                className="flex-none w-full md:w-1/4 snap-center space-y-4 py-4 bg-gray-100 rounded-2xl overflow-hidden"
+                className="flex-none w-full md:w-1/4 snap-center space-y-4 py-4 bg-gray-100 hover:bg-gradient-to-r from-orange-400 to-orange-600 shadow-md transition-all rounded-2xl overflow-hidden"
               >
                 <div className="h-48">
                   <img
@@ -112,9 +120,9 @@ export default function Why() {
                 <p className="px-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <div
             ref={scrollbarRef}

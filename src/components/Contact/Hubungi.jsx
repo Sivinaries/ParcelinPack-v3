@@ -26,9 +26,19 @@ function Hubungi() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const mailtoLink = `mailto:hello@parcelinpack.id?subject=Konsultasi Packaging&body=Nama: ${formData.nama}%0D%0ANo Hp: ${formData.noHp}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
-        window.location.href = mailtoLink;
+        if (!formData.nama || !formData.noHp || !formData.email || !formData.message) {
+            alert("Semua kolom harus diisi!");
+            return;
+        }
+        
+        const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@parcelinpack.id&su=Konsultasi%20Packaging&body=Nama:%20${encodeURIComponent(formData.nama)}%0D%0ANo%20HP:%20${encodeURIComponent(formData.noHp)}%0D%0AEmail:%20${encodeURIComponent(formData.email)}%0D%0APesan:%20${encodeURIComponent(formData.message)}`;
+    
+        window.open(mailtoLink, "_blank");
+    
+        // Reset form setelah kirim
+        setFormData({ nama: "", noHp: "", email: "", message: "" });
     };
+    
 
     return (
         <div className="grid grid-cols-1 h-full bg-white w-full">
@@ -41,7 +51,7 @@ function Hubungi() {
                             <h2 className="text-lg font-medium text-gray-500">Konsultasikan Packaging Anda</h2>
                             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-6">
                                 <InputField label="Nama" name="nama" value={formData.nama} onChange={handleChange} />
-                                <InputField label="No HP" name="noHp" value={formData.noHp} onChange={handleChange} />
+                                <InputField label="No HP" name="noHp" type="number" value={formData.noHp} onChange={handleChange} />
                                 <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} />
                                 <div>
                                     <label htmlFor="message" className="font-medium text-gray-700">Pesan</label>
@@ -66,22 +76,37 @@ function Hubungi() {
                         {/* SOCIAL MEDIA */}
                         <div className="space-y-4 md:space-y-6 my-auto">
                             <div className="grid grid-cols-2 gap-2 md:gap-6 text-center">
-                                {[
-                                    { icon: FaWhatsapp, title: "Whatsapp", link: "https://warotator.parcelinpack.id/organik-website-5", contact: ["+62 819-4002-020", "+62 822-2500-7380"] },
-                                    { icon: SiGmail, title: "Email", link: "mailto:hello@parcelinpack.id", contact: ["hello@parcelinpack.id"] },
-                                    { icon: FaInstagram, title: "Instagram", link: "https://www.instagram.com/parcelinpack/", contact: ["@parcelinpack", "@parcelinpremium"] },
-                                    { icon: FaTiktok, title: "Tiktok", link: "https://www.tiktok.com/@parcelincompany", contact: ["@parcelincompany"] },
-                                ].map(({ icon: Icon, title, link, contact }, idx) => (
-                                    <a key={idx} href={link} target="_blank" rel="noopener noreferrer" className="group block p-3 md:p-6 rounded-3xl shadow-md bg-white border border-gray-200 hover:bg-orange-50 transition duration-300">
-                                        <Icon className="w-7 md:w-14 h-7 md:h-14 mx-auto text-orange-600 group-hover:text-orange-800 transition duration-300" />
-                                        <h3 className="text-sm md:text-lg font-semibold mt-2 md:mt-3 text-gray-700">{title}</h3>
-                                        {contact.map((c, i) => (
-                                            <p key={i} className="text-sm md:text-lg text-gray-500">{c}</p>
-                                        ))}
+                                <div className="group block p-3 md:p-6 rounded-3xl shadow-md bg-white border border-gray-200 hover:bg-orange-50 transition duration-300">
+                                    <FaWhatsapp className="w-7 md:w-14 h-7 md:h-14 mx-auto text-orange-600 group-hover:text-orange-800 transition duration-300" />
+                                    <h3 className="text-sm md:text-lg font-semibold mt-2 md:mt-3 text-gray-700">Whatsapp</h3>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://wa.me/628194002020">
+                                        <p className="text-sm md:text-lg text-gray-500 hover:underline hover:text-black delay-100 transition-all">+62 819-4002-020</p>
                                     </a>
-                                ))}
+                                    <a target="_blank" rel="noopener noreferrer" href="https://wa.me/6282225007380">
+                                        <p className="text-sm md:text-lg text-gray-500 hover:underline hover:text-black delay-100 transition-all">+62 822-2500-7380</p>
+                                    </a>
+                                </div>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@parcelinpack.id" target="_blank" rel="noopener noreferrer" className="group block p-3 md:p-6 rounded-3xl shadow-md bg-white border border-gray-200 hover:bg-orange-50 transition duration-300">
+                                    <SiGmail className="w-7 md:w-14 h-7 md:h-14 mx-auto text-orange-600 group-hover:text-orange-800 transition duration-300" />
+                                    <h3 className="text-sm md:text-lg font-semibold mt-2 md:mt-3 text-gray-700">Email</h3>
+                                    <p className="text-sm md:text-lg text-gray-500 hover:underline hover:text-black delay-100 transition-all">hello@parcelinpack.id</p>
+                                </a>
+                                <div className="group block p-3 md:p-6 rounded-3xl shadow-md bg-white border border-gray-200 hover:bg-orange-50 transition duration-300">
+                                    <FaInstagram className="w-7 md:w-14 h-7 md:h-14 mx-auto text-orange-600 group-hover:text-orange-800 transition duration-300" />
+                                    <h3 className="text-sm md:text-lg font-semibold mt-2 md:mt-3 text-gray-700">Instagram</h3>
+                                    <a href="https://www.instagram.com/parcelinpack/" target="_blank" rel="noopener noreferrer">
+                                        <p className="text-sm md:text-lg text-gray-500 hover:underline hover:text-black delay-100 transition-all">@parcelinpack</p>
+                                    </a>
+                                    <a href="https://www.instagram.com/parcelinpremium/" target="_blank" rel="noopener noreferrer">
+                                        <p className="text-sm md:text-lg text-gray-500 hover:underline hover:text-black delay-100 transition-all">@parcelinpremium</p>
+                                    </a>
+                                </div>
+                                <a href="https://www.tiktok.com/@parcelincompany" target="_blank" rel="noopener noreferrer" className="group block p-3 md:p-6 rounded-3xl shadow-md bg-white border border-gray-200 hover:bg-orange-50 transition duration-300">
+                                    <FaTiktok className="w-7 md:w-14 h-7 md:h-14 mx-auto text-orange-600 group-hover:text-orange-800 transition duration-300" />
+                                    <h3 className="text-sm md:text-lg font-semibold mt-2 md:mt-3 text-gray-700">Tiktok</h3>
+                                    <p className="text-sm md:text-lg text-gray-500 hover:underline hover:text-black delay-100 transition-all">@parcelincompany</p>
+                                </a>
                             </div>
-
                             {/* GOOGLE MAPS */}
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.6411938312243!2d110.4617952!3d-6.999672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708da6adba10df%3A0xc2a5d98408735972!2sPT.%20Parcelin%20Creative%20Indonesia%20(ParcelinPack%20Office)!5e0!3m2!1sen!2sid!4v1709020000000"

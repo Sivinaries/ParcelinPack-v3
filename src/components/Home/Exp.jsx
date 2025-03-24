@@ -4,6 +4,7 @@ import exp2 from "/images/exp/exp2.png";
 import exp3 from "/images/exp/exp3.png";
 
 function Exp() {
+  
   const [yearsCount, setYearsCount] = useState(0);
   const [customersCount, setCustomersCount] = useState(0);
   const [productionCount, setProductionCount] = useState(0);
