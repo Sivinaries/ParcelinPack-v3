@@ -28,7 +28,7 @@ function Packaging() {
                         <div>
                             <h1 className="text-[30px] md:text-[120px]"> untuk</h1>
                         </div>
-                        <div className="my-auto">
+                        <a href="/service" className="my-auto">
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
                                 transition={{ type: "spring", stiffness: 300 }}
@@ -49,7 +49,7 @@ function Packaging() {
                                     </Slider>
                                 </div>
                             </motion.div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
