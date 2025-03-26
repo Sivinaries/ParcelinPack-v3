@@ -40,7 +40,7 @@ export default function Product() {
       />
       <div className="grid grid-cols-1 h-full bg-white w-full">
         <div className="md:my-4 my-2 space-y-8 md:space-y-12">
-          <div className="w-full md:w-1/2 mx-auto">
+          <div className="w-11/12 md:w-1/2 mx-auto ">
             <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </div>
           <div className="mx-4 md:mx-20">
